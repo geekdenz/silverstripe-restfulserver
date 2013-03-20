@@ -390,7 +390,7 @@ class RestfulServer extends Controller {
 				return $this->permissionFailure();
 			}
 			
-			$obj->$relation();
+			$obj->$relation($this->request, $this);
 			
 			$this->getResponse()->setStatusCode(204); // No Content
 			return true;
